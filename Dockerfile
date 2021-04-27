@@ -6,8 +6,7 @@ RUN apt-get update && apt-get install -y \
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e "packages <- readLines('/requirements.txt'); install.packages(packages)"
 
-COPY ./app/app.r ./app/app.r
-COPY ./app/ui.r ./app/ui.r
+COPY ./app/app.R ./app/app.R
 COPY entrypoint.sh /
 RUN chmod 755 /entrypoint.sh
 
